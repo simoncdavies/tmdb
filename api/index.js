@@ -29,6 +29,7 @@ const apiLanguage = 'en-GB';
 // API requests
 app.get('/api/config', (req, res) => {
   apiOptions.url = `${apiURL}/configuration`;
+  
   axios.request(apiOptions).then(function (response) {
     res.json(response.data);
   }).catch(function (error) {
