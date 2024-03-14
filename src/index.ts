@@ -6,12 +6,12 @@ import axios from 'axios';
 dotenv.config();
 
 const port: number = 3000;
-const app: Express = express();
+const app = express();
 app.use(cors());
 
 app.listen(port, () => console.log(`Server is running on ${port}`));
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req, res) => {
     res.send("TMDB");
 });
 
@@ -75,3 +75,5 @@ app.get('/api/search/:query/:page?', (req, res) => {
         console.error(error);
     });
 });
+
+module.exports = app;
